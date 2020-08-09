@@ -1,17 +1,18 @@
 const express = require("express");
+const path = require('path');
 
 const router = express.Router();
 
 const homePage = (req, res) => {
-  res.sendFile("public/index.html");
+    res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 };
 
 const exercisePage = (req, res) => {
-  res.sendFile("public/exercise.html");
+    res.sendFile(path.resolve(__dirname + '/../public/exercise.html'))
 };
 
 const statsPage = (req, res) => {
-    res.sendFile("public/stats.html");
+    res.sendFile(path.resolve(__dirname + '/../public/stats.html'))
   };
 
 router.get("/", homePage);
